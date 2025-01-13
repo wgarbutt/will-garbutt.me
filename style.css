@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4e3954;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 300px;
+    padding: 0 10px; /* Added padding */
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.avatar-icon {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #8E24AA;
+}
+
+h1, p {
+    margin: 5px 0;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.credit {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* Button styles */
+.button {
+    --main-color: #24292e;
+    --hover-color: #2b3137;
+    --transition-timing: 0.7s cubic-bezier(0.310, -0.105, 0.430, 1.400);
+
+    display: block;
+    width: 80%; /* Reduced width */
+    height: 50px;
+    margin: 10px auto; /* Centered button */
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-timing);
+    text-decoration: none;
+    position: relative;
+}
+
+.button span,
+.button .icon {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-timing);
+}
+
+.button span {
+    width: 72%;
+    left: 0;
+    justify-content: center;
+    font-size: 16px;
+    text-transform: none; /* Removed capitalization */
+}
+
+.button .icon {
+    width: 28%;
+    right: 0;
+    justify-content: center;
+}
+
+.button .icon .fab,
+.button .icon .fas {
+    font-size: 20px;
+    transition: all var(--transition-timing);
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--hover-color);
+}
+
+.button:hover span,
+.button:focus span {
+    left: -72%;
+    opacity: 0;
+}
+
+.button:hover .icon,
+.button:focus .icon {
+    width: 100%;
+}
+
+.button:hover .icon .fab,
+.button:hover .icon .fas,
+.button:focus .icon .fab,
+.button:focus .icon .fas {
+    font-size: 28px;
+}

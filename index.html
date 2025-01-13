@@ -4,63 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will Garbutt - Links</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #4e3954;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            width: 300px;
-        }
-        .avatar {
-            width: 80px;
-            height: 80px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 20px;
-        }
-        .avatar-icon {
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 40px solid #8E24AA;
-        }
-        h1, p {
-            margin: 5px 0;
-        }
-        .social-icons {
-            margin: 20px 0;
-        }
-        .social-icons a {
-            color: white;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-        .btn {
-            display: block;
-            background-color: white;
-            color: #8E24AA;
-            text-decoration: none;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-        .credit {
-            font-size: 12px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -68,18 +13,37 @@
             <div class="avatar-icon"></div>
         </div>
         <h1>Will Garbutt</h1>
-        <p></p>
         <p>will@will-garbutt.me</p>
         <div class="social-icons">
-            <a href="#">EM</a>
-            <a href="#">IG</a>
-            <a href="#">TW</a>
-            <a href="#">DR</a>
-            <a href="#">IN</a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-        <a href="#" class="btn">Read my Resume</a>
-        <a href="#" class="btn">Read My Blog - Stuffabout.cloud</a>
-        <a href="#" class="btn">View my repos - Github</a>
+        
+        <a class="button" href="https://resume.will-garbutt.me" target="_blank" rel="noopener noreferrer">
+            <span>Resume</span>
+            <div class="icon">
+                <i class="fas fa-file-alt"></i>
+            </div>
+        </a>
+        
+        <a class="button" href="https://stuffabout.cloud" target="_blank" rel="noopener noreferrer">
+            <span>Blog</span>
+            <div class="icon">
+                <i class="fas fa-blog"></i>
+            </div>
+        </a>
+        
+        <a class="button" href="https://github.com/wgarbutt" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <div class="icon">
+                <i class="fab fa-github"></i>
+            </div>
+        </a>
+        
+
     </div>
 </body>
 </html>
