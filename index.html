@@ -5,45 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will Garbutt - Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #4e3954;
+            --text-color: #ffffff;
+            --button-color: #24292e;
+            --button-hover: #2b3137;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #4e3954;
-            color: white;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-color);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.3s ease;
         }
 
         .container {
             text-align: center;
             width: 300px;
-            padding: 0 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
 
         .avatar {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background-color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1);
         }
 
         .avatar-icon {
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 40px solid #8E24AA;
+            width: 60px;
+            height: 60px;
+            background-color: #8E24AA;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
 
-        h1, p {
+        h1 {
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        p {
             margin: 5px 0;
+            font-weight: 300;
         }
 
         .social-icons {
@@ -51,127 +75,144 @@
         }
 
         .social-icons a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
-            margin: 0 5px;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #ffd700;
+        }
+
+        .button {
+            --transition-timing: 0.3s cubic-bezier(0.310, -0.105, 0.430, 1.400);
+
+            display: block;
+            width: 80%;
+            padding: 12px;
+            margin: 15px auto;
+            background-color: var(--button-color);
+            color: var(--text-color);
+            border-radius: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-timing);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .button span {
+            position: relative;
+            z-index: 1;
+            transition: all var(--transition-timing);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: var(--button-hover);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all var(--transition-timing);
+        }
+
+        .button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .credit {
             font-size: 12px;
             margin-top: 20px;
+            font-weight: 300;
         }
 
-        /* Button styles */
-        .button {
-            --main-color: #24292e;
-            --hover-color: #2b3137;
-            --transition-timing: 0.7s cubic-bezier(0.310, -0.105, 0.430, 1.400);
-
-            display: block;
-            width: 80%;
-            height: 50px;
-            margin: 10px auto;
-            background-color: var(--main-color);
-            color: #fff;
-            border-radius: 5px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all var(--transition-timing);
-            text-decoration: none;
-            position: relative;
-        }
-
-        .button span,
-        .button .icon {
+        #theme-toggle {
             position: absolute;
-            top: 0;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            transition: all var(--transition-timing);
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5em;
+            cursor: pointer;
         }
 
-        .button span {
-            width: 72%;
-            left: 0;
-            justify-content: center;
-            font-size: 16px;
-            text-transform: none;
-        }
-
-        .button .icon {
-            width: 28%;
-            right: 0;
-            justify-content: center;
-        }
-
-        .button .icon .fab,
-        .button .icon .fas {
-            font-size: 20px;
-            transition: all var(--transition-timing);
-        }
-
-        .button:hover,
-        .button:focus {
-            background-color: var(--hover-color);
-        }
-
-        .button:hover span,
-        .button:focus span {
-            left: -72%;
-            opacity: 0;
-        }
-
-        .button:hover .icon,
-        .button:focus .icon {
-            width: 100%;
-        }
-
-        .button:hover .icon .fab,
-        .button:hover .icon .fas,
-        .button:focus .icon .fab,
-        .button:focus .icon .fas {
-            font-size: 28px;
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --button-color: #3a3a3a;
+            --button-hover: #4a4a4a;
         }
     </style>
 </head>
 <body>
+    <button id="theme-toggle"><i class="fas fa-moon"></i></button>
     <div class="container">
         <div class="avatar">
             <div class="avatar-icon"></div>
         </div>
-        <h1>Will Garbutt</h1>
+        <h1 id="name">Will Garbutt</h1>
         <p>will@will-garbutt.me</p>
         <div class="social-icons">
             <a href="#"><i class="fas fa-envelope"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-dribbble"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/will-garbutt/"><i class="fab fa-linkedin"></i></a>
         </div>
         
         <a class="button" href="https://resume.will-garbutt.me" target="_blank" rel="noopener noreferrer">
             <span>Resume</span>
-            <div class="icon">
-                <i class="fas fa-file-alt"></i>
-            </div>
         </a>
         
         <a class="button" href="https://stuffabout.cloud" target="_blank" rel="noopener noreferrer">
             <span>Blog</span>
-            <div class="icon">
-                <i class="fas fa-blog"></i>
-            </div>
         </a>
         
         <a class="button" href="https://github.com/wgarbutt" target="_blank" rel="noopener noreferrer">
             <span>GitHub</span>
-            <div class="icon">
-                <i class="fab fa-github"></i>
-            </div>
         </a>
+        <script>
+            // Typing effect
         
-      
+        
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const icon = themeToggle.querySelector('i');
+        
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        
+            // Button hover effect
+            document.querySelectorAll('.button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            </script>
+    
     </div>
 </body>
 </html>
